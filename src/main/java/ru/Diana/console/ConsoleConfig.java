@@ -31,26 +31,26 @@ public class ConsoleConfig {
         System.out.println("Версия: " + appVersion);
     }
 
-    @Bean
-    public CommandLineRunner commandScanner(CommandProcessor commandProcessor) {
-        return args -> {
-            try (Scanner scanner = new Scanner(System.in)) {
-                System.out.println("Введите команду. 'exit' для выхода.");
-
-                while (true) {
-                    System.out.print("> ");
-                    String input = scanner.nextLine().trim();
-
-                    if ("exit".equalsIgnoreCase(input)) {
-                        System.out.println("Завершение работы программы...");
-                        break;
-                    }
-
-                    if (!input.isEmpty()) {
-                        commandProcessor.processCommand(input);
-                    }
-                }
-            }
-        };
-    }
+//    @Bean
+//    public CommandLineRunner commandScanner(CommandProcessor commandProcessor) {
+//        return args -> {
+//            try (Scanner scanner = new Scanner(System.in)) {
+//                System.out.println("Введите команду. 'exit' для выхода.");
+//
+//                while (true) {
+//                    System.out.print("> ");
+//                    String input = scanner.nextLine().trim();
+//
+//                    if ("exit".equalsIgnoreCase(input)) {
+//                        System.out.println("Завершение работы программы...");
+//                        break;
+//                    }
+//
+//                    if (!input.isEmpty()) {
+//                        commandProcessor.processCommand(input);
+//                    }
+//                }
+//            }
+//        };
+//    }
 }
