@@ -9,7 +9,7 @@ import ru.Diana.entity.Event;
 import java.util.List;
 
 @Repository
-@RepositoryRestResource
+@RepositoryRestResource(exported = false)
 public interface EventRepository extends CrudRepository<Event, Long> {
     
 

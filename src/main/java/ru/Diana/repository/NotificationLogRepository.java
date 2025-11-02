@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import ru.Diana.entity.NotificationLog;
 
 @Repository
-@RepositoryRestResource
+@RepositoryRestResource(exported = false)
 public interface NotificationLogRepository extends CrudRepository<NotificationLog, Long> {
 }

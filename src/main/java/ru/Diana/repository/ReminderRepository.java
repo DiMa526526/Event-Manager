@@ -8,7 +8,7 @@ import ru.Diana.entity.Reminder;
 import java.util.List;
 
 @Repository
-@RepositoryRestResource
+@RepositoryRestResource(exported = false)
 public interface ReminderRepository extends CrudRepository<Reminder, Long> {
     List<Reminder> findByEventId(Long eventId);
 }

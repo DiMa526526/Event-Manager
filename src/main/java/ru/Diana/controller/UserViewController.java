@@ -50,4 +50,9 @@ public class UserViewController {
     public String getHomePage() {
         return "user-list";
     }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
 }

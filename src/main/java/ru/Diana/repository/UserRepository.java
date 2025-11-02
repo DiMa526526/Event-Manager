@@ -9,10 +9,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-@RepositoryRestResource
+@RepositoryRestResource(exported = false)
 public interface UserRepository extends CrudRepository<User, Long> {
     Optional<User> findByUsername(String username);
-
     List<User> findByUsernameOrEmail(String username, String email);
+    boolean existsByUsername(String username);
 }
-

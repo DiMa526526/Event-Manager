@@ -1,7 +1,6 @@
 package ru.Diana.entity;
 
 import jakarta.persistence.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +22,9 @@ public class User {
 
     @Column
     private String timezone = "UTC";
+
+    @Column
+    private String roles = "ROLE_USER";
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Category> categories = new ArrayList<>();
@@ -71,5 +73,13 @@ public class User {
 
     public void setTimezone(String timezone) {
         this.timezone = timezone;
+    }
+
+    public String getRoles() {
+        return roles;
+    }
+
+    public void setRoles(String roles) {
+        this.roles = roles;
     }
 }
