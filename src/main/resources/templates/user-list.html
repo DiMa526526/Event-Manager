@@ -89,9 +89,88 @@
             margin-bottom: 20px;
         }
 
+        .reports-section {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .reports-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .reports-title {
+            color: #333;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .create-report-btn {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .create-report-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        .reports-description {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .reports-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .feature-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .feature-description {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
         /* Адаптивность */
         @media (max-width: 768px) {
             .header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .reports-header {
                 flex-direction: column;
                 gap: 15px;
                 text-align: center;
@@ -105,6 +184,10 @@
             table {
                 font-size: 14px;
             }
+
+            .reports-features {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
@@ -117,9 +200,13 @@
                 font-size: 12px;
             }
 
-            .logout-btn {
+            .logout-btn, .create-report-btn {
                 padding: 10px 20px;
                 font-size: 13px;
+            }
+
+            .reports-section {
+                padding: 15px;
             }
         }
     </style>
@@ -155,6 +242,45 @@
         </tr>
         </tbody>
     </table>
+
+    <div class="reports-section">
+        <div class="reports-header">
+            <h2 class="reports-title">Система отчетов</h2>
+            <a href="/reports/create" class="create-report-btn">Создать новый отчет</a>
+        </div>
+
+        <div class="reports-description">
+            Создавайте статистические отчеты о работе системы. Отчеты формируются асинхронно
+            и содержат информацию о пользователях, событиях и временных метриках.
+        </div>
+
+        <div class="reports-features">
+            <div class="feature-card">
+                <div class="feature-title">Статистика пользователей</div>
+                <div class="feature-description">
+                    Подсчет общего количества зарегистрированных пользователей в системе
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Анализ событий</div>
+                <div class="feature-description">
+                    Просмотр последних событий календаря с детальной информацией
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Временные метрики</div>
+                <div class="feature-description">
+                    Измерение времени выполнения операций для оптимизации системы
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Асинхронная генерация</div>
+                <div class="feature-description">
+                    Отчеты создаются в фоновом режиме без блокировки интерфейса
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
